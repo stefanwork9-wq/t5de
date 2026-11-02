@@ -45,7 +45,7 @@ def main():
             patcher.download()
             patcher.install()
             patcher.copy()
-            patcher.patch(patchers=[InterfacePatcher, PythonPatcher, ChecksumPatcher], dry_run=args.dry_run)
+            patcher.patch(patchers=[], dry_run=args.dry_run)  # VANILLA TEST: no patches
 
     return 0
 
