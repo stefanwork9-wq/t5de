@@ -6,4 +6,5 @@ class SkipChecksumPatch(ChecksumPatch):
         super(SkipChecksumPatch, self).__init__()
         self.register('SKIP_LIBRARY', 'checksum.txt', 'library')
         self.register('SKIP_IMVUCONTENT', 'checksum.txt', 'imvuContent')
-        self.register('SKIP_FINGERPRINT', 'checksum.txt', 'devicefingerprint')
+        # DIAGNOSTIC: keep devicefingerprint checksum entry
+        # self.register('SKIP_FINGERPRINT', 'checksum.txt', 'devicefingerprint')
