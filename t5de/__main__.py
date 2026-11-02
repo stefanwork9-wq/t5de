@@ -45,7 +45,7 @@ def main():
             patcher.download()
             patcher.install()
             patcher.copy()
-            patcher.patch(patchers=[PythonPatcher], dry_run=args.dry_run)  # PYTHON TEST: only Python patches (T10 disabled)
+            patcher.patch(patchers=[InterfacePatcher, PythonPatcher, ChecksumPatcher], dry_run=args.dry_run)
 
     return 0
 
