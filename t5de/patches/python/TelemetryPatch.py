@@ -14,7 +14,7 @@ class TelemetryPatch(PythonPatch):
         self.register('TELEMETRY_7', 'main/clientapp.py', r'sendLogsOnLogin')
         self.register('TELEMETRY_8', 'main/SendIMVULogs.py', r'def send')
         self.register('TELEMETRY_9', 'main/SendIMVULogs.py', r'def send_internal')
-        self.register('TELEMETRY_10', 'imvu/devicefingerprint.py', r'import')
+        self.register('TELEMETRY_10', 'imvu/devicefingerprint.py', r'__diagnostic_disabled__')  # DIAGNOSTIC: disabled to isolate startup crash
         self.register('TELEMETRY_11', 'imvu/log.py', r'def getRecords')
         self.register('TELEMETRY_12', 'imvu/mode/HomeMode.py', r'def loadFPEdgeUrl')
         self.register('TELEMETRY_13', 'imvu/account.py', r'def getUpdateInfo')
