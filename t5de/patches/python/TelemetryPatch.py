@@ -17,9 +17,12 @@ class TelemetryPatch(PythonPatch):
         self.register('TELEMETRY_10', 'imvu/devicefingerprint.py', r'__diagnostic_disabled__')  # DIAGNOSTIC: disabled to isolate startup crash
         self.register('TELEMETRY_11', 'imvu/log.py', r'def getRecords')
         self.register('TELEMETRY_12', 'imvu/mode/HomeMode.py', r'def loadFPEdgeUrl')
-        self.register('TELEMETRY_13', 'imvu/account.py', r'def getUpdateInfo')
-        self.register('TELEMETRY_14', 'imvu/account.py', r'self\.__factReporter\.recordFact')
-        self.register('TELEMETRY_15', 'imvu/account.py', r'self\.__factReporter\.recordFactOnlyOnce')
+        # BISECT: T13 disabled
+        # self.register('TELEMETRY_13', 'imvu/account.py', r'def getUpdateInfo')
+        # BISECT: T14 disabled
+        # self.register('TELEMETRY_14', 'imvu/account.py', r'self\.__factReporter\.recordFact')
+        # BISECT: T15 disabled
+        # self.register('TELEMETRY_15', 'imvu/account.py', r'self\.__factReporter\.recordFactOnlyOnce')
 
     def patch(self, context):
         if context.pattern == 'TELEMETRY_1':
