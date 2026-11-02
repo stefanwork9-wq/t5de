@@ -1,4 +1,5 @@
 from AccountPatch import AccountPatch
-from TelemetryPatch import TelemetryPatch
+# BISECT: TelemetryPatch disabled to isolate startup crash
+# from TelemetryPatch import TelemetryPatch
 from WindowsPatch import WindowsPatch
 from EnablePhotoModePatch import EnablePhotoModePatch
