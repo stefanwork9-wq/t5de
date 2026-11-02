@@ -45,7 +45,7 @@ def main():
             patcher.download()
             patcher.install()
             patcher.copy()
-            patcher.patch(patchers=[ChecksumPatcher], dry_run=args.dry_run)  # CHECKSUM TEST: only checksum patch
+            patcher.patch(patchers=[PythonPatcher], dry_run=args.dry_run)  # PYTHON TEST: only Python patches (T10 disabled)
 
     return 0
 
