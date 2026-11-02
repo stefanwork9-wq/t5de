@@ -114,7 +114,7 @@ class Client:
             ignore=shutil.ignore_patterns('*.lock')
         )
         
-        # VANILLA TEST: do not copy devicefingerprint.pyd
+        # DISABLED for IMVU 554.8: devicefingerprint.pyd not used (TELEMETRY_10 disabled)
         # print('COPYING: devicefingerprint.pyd')
         # 
         # shutil.copy(
