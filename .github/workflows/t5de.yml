@@ -49,11 +49,10 @@ jobs:
           echo "APP_VERSION=${{ env.APP_VERSION }}"
 
       - name: Setup Python 2.7
-   run: |
-    choco install python2 -y --no-progress
-    echo "C:\Python27" >> $env:GITHUB_PATH
-    echo "C:\Python27\Scripts" >> $env:GITHUB_PATH
-      
+        run: |
+          choco install python2 -y --no-progress
+          echo "C:\Python27" >> $env:GITHUB_PATH
+          echo "C:\Python27\Scripts" >> $env:GITHUB_PATH
       - run: pip install -r requirements.txt
       
       - name: Patch Installer
@@ -86,3 +85,4 @@ jobs:
           files: T5DE-${{ env.APP_VERSION }}.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
