@@ -66,6 +66,8 @@ jobs:
           scoop update
           scoop bucket add extras
           scoop install nsis
+          echo "$env:USERPROFILE\scoop\shims" >> $env:GITHUB_PATH
+          echo "NSISDIR=$(scoop prefix nsis)" >> $env:GITHUB_ENV
 
       - name: Build Installer
         run: makensis ./scripts/install.nsi
@@ -83,6 +85,7 @@ jobs:
           files: T5DE-${{ env.APP_VERSION }}.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 
 
