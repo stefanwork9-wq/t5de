@@ -45,7 +45,7 @@ def main():
             patcher.download()
             patcher.install()
             patcher.copy()
-            patcher.patch(patchers=[], dry_run=args.dry_run)  # VANILLA TEST: no patches
+            patcher.patch(patchers=[ChecksumPatcher], dry_run=args.dry_run)  # CHECKSUM TEST: only checksum patch
 
     return 0
 
