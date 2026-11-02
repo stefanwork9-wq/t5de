@@ -27,4 +27,5 @@ class ChecksumPatcher(Patcher):
         os.remove(os.path.join(self.cwd, 'checksum.txt'))
 
         print('REMOVING: DEVICEFINGERPRINT.EXE')
-        os.remove(os.path.join(self.cwd, 'IMVUClient', 'devicefingerprint.exe'))
+        # DIAGNOSTIC: keep devicefingerprint.exe (TELEMETRY_10 disabled)
+        # os.remove(os.path.join(self.cwd, 'IMVUClient', 'devicefingerprint.exe'))
