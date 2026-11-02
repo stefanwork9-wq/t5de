@@ -8,14 +8,18 @@ class TelemetryPatch(PythonPatch):
         self.register('TELEMETRY_1', 'imvu/imq/imqconnection.py', r'def __recordPreAuthClose')
         self.register('TELEMETRY_2', 'imvu/mode/ProductEditMode.py', r'self\.__recordSaveException')
         self.register('TELEMETRY_3', 'imvu/mode/SettingsMode.py', r'def handle_sendLogs')
-        self.register('TELEMETRY_4', 'imvu/account.py', r'def recordModeOpen')
-        self.register('TELEMETRY_5', 'imvu/account.py', r'\'room_id\': room_id')
+        # BISECT: T4 disabled
+        # self.register('TELEMETRY_4', 'imvu/account.py', r'def recordModeOpen')
+        # BISECT: T5 disabled
+        # self.register('TELEMETRY_5', 'imvu/account.py', r'\'room_id\': room_id')
         self.register('TELEMETRY_6', 'main/bugzilla_submit.py', r'submitImvuBug')
-        self.register('TELEMETRY_7', 'main/clientapp.py', r'sendLogsOnLogin')
+        # BISECT: T7 disabled
+        # self.register('TELEMETRY_7', 'main/clientapp.py', r'sendLogsOnLogin')
         self.register('TELEMETRY_8', 'main/SendIMVULogs.py', r'def send')
         self.register('TELEMETRY_9', 'main/SendIMVULogs.py', r'def send_internal')
         self.register('TELEMETRY_10', 'imvu/devicefingerprint.py', r'__diagnostic_disabled__')  # DIAGNOSTIC: disabled to isolate startup crash
-        self.register('TELEMETRY_11', 'imvu/log.py', r'def getRecords')
+        # BISECT: T11 disabled
+        # self.register('TELEMETRY_11', 'imvu/log.py', r'def getRecords')
         self.register('TELEMETRY_12', 'imvu/mode/HomeMode.py', r'def loadFPEdgeUrl')
         # BISECT: T13 disabled
         # self.register('TELEMETRY_13', 'imvu/account.py', r'def getUpdateInfo')
