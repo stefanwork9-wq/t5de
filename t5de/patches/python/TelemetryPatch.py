@@ -74,7 +74,7 @@ class TelemetryPatch(PythonPatch):
         elif context.pattern == 'TELEMETRY_13':
             context.write('def shouldRecordFact(self, fact_type):', indent=1)
             context.write('__facts = ["NUI:CreatorMode", "NUI:ProductEditMode", "Create Mode Edit Pid", "Create Mode Derive Pid", "Create Mode Open Chkn", "Create Mode Open Cfl"]', indent=2)
-            context.write('if (fact_type in __facts) and not self.chkCreator():', indent=2)
+            context.write('if (fact_type in __facts) and not self.isCreator():', indent=2)  # FIX: use isCreator (AccountPatch disabled)
             context.write('return False', indent=3)
             context.write('return True\n\n', indent=2)
             context.write(context.line)
